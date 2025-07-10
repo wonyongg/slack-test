@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - dev  # 슬랙 알림 워크플로우와 동일한 브랜치로!
+
+jobs:
+  fake-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run fake build (sleep 30s)
+        run: |
+          echo "🛠️ Running fake CI step..."
+          sleep 30
+          echo "✅ Fake CI completed!"
