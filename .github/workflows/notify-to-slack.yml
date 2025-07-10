@@ -2,7 +2,7 @@ name: Notify Slack for PR Review and Comments
 
 on:
   pull_request:
-    branches: [dev]
+    branches: [main]
     types: [review_requested]
 
   issue_comment:
@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Wait for CI to pass (only for PR review_requested)
         if: github.event_name == 'pull_request'
-        uses: lewagon/wait-on-check-action@v1
+        uses: lewagon/wait-on-check-action@v1.4.0
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'CI'
