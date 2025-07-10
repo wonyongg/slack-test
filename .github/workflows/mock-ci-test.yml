@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - dev  # 슬랙 알림 워크플로우와 동일한 브랜치로!
+      - main  # 슬랙 알림 워크플로우와 동일한 브랜치로!
 
 jobs:
   fake-ci:
